@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>vghjklkjhgfd</h1>
+</body>
+<script>
+
+
+const url = "https://api.github.com/users/samir-k1"; // Correct API endpoint
+let xhr = new XMLHttpRequest();
+xhr.open('GET', url, true); // true makes the request asynchronous
+
+xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) { // 4 means the request is done
+        if (xhr.status === 200) { // 200 means a successful response
+            console.log("Response received:", xhr.responseText);
+        } else {
+            console.log("Error:", xhr.statusText);
+        }
+    }
+};
+
+// Send the request
+xhr.send(); // Corrected send method
+
+
+</script>
+</html>
+<!-- let xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://github.com/user/samir-k1');
+
+
+xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+            console.log("Response received:", xhr.responseText);
+        } else {
+            console.log("Error:", xhr.statusText);
+        }
+    }
+}; -->

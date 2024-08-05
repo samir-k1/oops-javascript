@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="startButton">Start</button>
+    <button id="stopButton">Stop</button>
+</body>
+<script>
+
+let intervalId;
+function getRandomColor() {
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+document.querySelector('#startButton').addEventListener('click', function() {
+    function changeColor() {
+        const changethecolor=document.body.style.backgroundColor = getRandomColor();
+        console.log("Color changed");
+    }
+    
+    // Set an interval to change the color every 2 seconds
+    if(!intervalId)
+    intervalId=setInterval(changeColor, 2000);
+});
+
+document.querySelector('#stopButton').addEventListener('click', function() {
+    console.log("stoped it")
+    if(intervalId)
+    clearInterval(intervalId);
+intervalId=null;
+});
+    
+
+
+
+
+
+
+// function printMessage() {
+//     console.log("Your Message"); // Replace with your actual message
+// }
+
+// function startInterval() {
+//     // Only start a new interval if one isn't already running
+//     // if (!intervalId) {
+//     //     intervalId = style.body.backgroungColor=getRandomColor();
+//     //     setInterval(getRandomColor, 1000); // Print message every 1 second
+//     // }
+
+
+
+// }
+
+// function stopInterval() {
+//     // Clear the interval if it's running
+//     if (intervalId) {
+//         clearInterval(intervalId);
+//         intervalId = null; // Reset the interval ID so it can be restarted
+//     }
+// }
+
+// // document.getElementById('startButton').addEventListener('click', startInterval);
+// document.getElementById('stopButton').addEventListener('click', stopInterval);
+
+
+// </script>

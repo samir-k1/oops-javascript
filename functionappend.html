@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="language">
+    <li>sdfghj</li>
+</ul>
+   
+</body>
+<script>
+//     function addLang( language) {
+//         const createLang=document.createElement('li')
+//   createLang.innerHTML=`${language}`
+//   document.querySelector('.language').appendChild(createLang)
+//     }
+
+function optiway(language) {
+    const createlang=document.createElement('li');
+    createlang.appendChild(document.createTextNode(language)) 
+document.querySelector('.language').appendChild(createlang)   
+}
+optiway('python')
+optiway('c++')
+
+
+const firstLang=document.querySelector("li:nth-child(2)")
+const createOne= document.createElement('li')
+createOne.textContent="mojo"
+firstLang.replaceWith(createOne)
+
+//editquer
+const secLang=document.querySelector("li:nth-child(1)")
+secLang.outerHTML='<li>typescript<li>'
+
+const firstone=document.querySelector("li:last-child")
+firstone.remove()
+    </script>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        promises
+    </h1>
+</body>
+
+<script>
+//     const promiseOne=new Promise(function(resolve,reject){
+//     setTimeout(function(){
+//         console.log(" hello bro")
+//         resolve()
+//     }, 1000);
+// });
+// promiseOne.then(function () {
+//     console.log("promised consume")
+// })
+
+
+
+// const promiseTwo=new Promise(function(resolve,reject){
+//     setTimeout(() => {
+//         console.log({username:"samir"})
+//         resolve()
+//     }, 1000);
+// })
+// promiseTwo.then(function(user){
+// return console.log(user)
+// });
+// let error=true;
+// const promisethree= new Promise(function(resolve,reject){
+   
+// if (!error) {
+    
+//     console.log("it is not error")
+// }
+// else{
+//     console.log("it is  error")
+// }
+// resolve()
+
+// });
+
+// promisethree.then(function(error){
+//     console.log(error)
+// })
+
+
+const promiseFour=new Promise(function(resolve,reject){
+    setTimeout(() => {
+        let error=false;
+        if (!error) {
+            console.log({
+                username:"samir" ,age:20
+            })
+         
+        }
+        else{
+            console.log("its not correct")
+        }
+    }, 1000);
+})
+
+
+promiseFour.then(function(user){
+    console.log(user)
+    return user.username;
+}).then((username)=>{
+console.log(username)
+}).catch((error)=>{
+consolelog(error)
+}).finally(()=>{
+    console.log(" promised done")
+})
+
+
+const promiseFive = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        let error = true
+        if (!error) {
+            resolve({username: "javascript", password: "123"})
+        } else {
+            reject('ERROR: JS went wrong')
+        }
+    }, 1000)
+});
+async  function consumeFunctionFive(){
+  try{ const response= await promiseFive;
+   console.log(response);
+}
+catch(error){
+    console.log(error)
+}
+}
+
+
+consumeFunctionFive()
+
+
+
+ fetch("https://api.github.com/users/hiteshchoudhary")
+ .then((resonse)=>{
+    return resonse.json()
+
+ })
+ .then((data)=>{
+    console.log(data)
+ })
+
+.catch((error)=>{
+console.log("its an error")
+})
+
+</script>
+</html>
